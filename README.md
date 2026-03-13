@@ -28,7 +28,7 @@ void clear_htable(HASHTABLE* htable) - // clears all buckets but does not delete
 ```
 
 ### Filters and Actions
-Filter:
+**Filter:**
 ```c
 typedef int (*FILTERFUNC)(const char* key, ValueABSTRType abstrtype, Vtype value);
 HASHTABLE* select_all_which(HASHTABLE* htable, FILTERFUNC filter);
@@ -49,7 +49,7 @@ HASHTABLE* filtered = select_all_which(table, int_gt_30);
 ```
 
 
-Actions:
+**Actions:**
 ```c
 typedef int (*APPLYFUNC)(const char* key, ValueABSTRType abstrtype, Vtype *value);
 void apply_to_all(HASHTABLE* htable, FILTERFUNC filter);
