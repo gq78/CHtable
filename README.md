@@ -4,26 +4,28 @@
 
 A simple C library for interacting with hash tables. 
 Key type: char * (string)
-Value type: int, float, char * (string) - union {int ival, float fval, char *sval} Vtype
+Value type: __int, float, char * (string) - union {int ival, float fval, char *sval} Vtype__
 
 
 Auxiliary abstract types for easier operations: 
-INT_V, STRING_V, FLOAT_V
+**INT_V, STRING_V, FLOAT_V**
 
 
 ## Features:
 
 ### Creation and deletion 
+```c
 HASHTABLE* create_htable() - // returns pointer to a new hash table
-
+```
 Example:
 ```c
 HASHTABLE *ht = create_htable();
 ```
+```c
 HASHTABLE* clone_htable(HASHTABLE* htable);
 void delete_htable(HASHTABLE* htable);
 void clear_htable(HASHTABLE* htable) - // clears all buckets but does not delete the hash table
-
+```
 
 ### Filters and Actions
 ```c
