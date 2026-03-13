@@ -26,10 +26,10 @@ void clear_htable(HASHTABLE* htable) - // clears all buckets but does not delete
 
 
 ### Filters and Actions
-
+```c
 typedef int (*FILTERFUNC)(const char* key, ValueABSTRType abstrtype, Vtype value);
 HASHTABLE* select_all_which(HASHTABLE* htable, FILTERFUNC filter);
-
+```
 Example:
 ```c
 int int_gt_30(const char *key, ValueABSTRType type, Vtype value) {
@@ -44,10 +44,10 @@ in main():
 ```c
 HASHTABLE* filtered = select_all_which(table, int_gt_30);
 ```
-
+```c
 typedef int (*APPLYFUNC)(const char* key, ValueABSTRType abstrtype, Vtype *value);
 void apply_to_all(HASHTABLE* htable, FILTERFUNC filter);
-
+```
 Example:
 
 ```c
@@ -67,28 +67,34 @@ apply_to_all(tb, mult_by_10);
 
 
 ### Display and inspection
-
+```c
 void printf_full_htable(HASHTABLE* htable)
 void printf_ht_element(HASHTABLE* htable, char* key)
-
+```
 ### Interaction
+```c
 char** get_keys(HASHTABLE* htable) - returns an array of all keys
 void* get_value(HASHTABLE* htable, char* key) - returns the value by key
-
+```
+```c
 int is_exists(HASHTABLE* htable, char* key);
-
+```
 #### Insearting by types:
+```c
 void insert_data_str_int(HASHTABLE* htable, char* key, int value);
 void insert_data_str_float(HASHTABLE* htable, char* key, float value);
 void insert_data_str_str(HASHTABLE* htable, char* key, char* value);
-
+```
+```c
 int delete_data(HASHTABLE* htable, char* key);
-
+```
 ### Debugging
+```c
 void ht_reallocation(HASHTABLE* htable, int new_tcapacity) - // changes the size of your hash table
 
 float fill_factor_calculator(HASHTABLE* htable) - // calculates fill factor (used size/allocated size)
 
 int get_htcapacity(HASHTABLE* ht);
 int get_htsize(HASHTABLE* htable);
+```
 
